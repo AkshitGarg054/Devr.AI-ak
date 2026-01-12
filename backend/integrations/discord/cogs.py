@@ -218,7 +218,8 @@ class DevRelCommands(commands.Cog):
                 title="🔄 Indexing Repository",
                 description=(
                     f"Indexing `{repository}`...\n\n"
-                    "This typically takes 5-30 minutes depending on repository size."
+                    "⏳ Note: For large repositories, indexing can take 30-35 minutes."
+                    "Please wait until the process completes."
                 ),
                 color=discord.Color.blue()
             )
@@ -271,7 +272,7 @@ class DevRelCommands(commands.Cog):
                         error_msg = result.get("message", "Unknown error")
                         error_embed = discord.Embed(
                             title="❌ Indexing Failed",
-                            description=f"Could not index `{repository}`",
+                            description=f"Indexing did not complete `{repository}`",
                             color=discord.Color.red()
                         )
                         error_embed.add_field(
@@ -283,8 +284,6 @@ class DevRelCommands(commands.Cog):
                         tip = None
                         if "already indexed" in error_msg.lower():
                             tip = "This repository is already indexed! You can query it directly."
-                        elif "pending" in error_msg.lower():
-                            tip = "Indexing is in progress. Check status with `/list_indexed_repos`"
 
                         if tip:
                             error_embed.add_field(
