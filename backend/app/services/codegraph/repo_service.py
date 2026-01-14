@@ -69,7 +69,7 @@ class RepoService:
                         "message": f"Repository already indexed. Graph: `{repo_data['graph_name']}`"
                     }
                 
-                # if status is pending or faild --> restart indexing
+                # if status is pending or failed --> restart indexing
                 logger.info(
                     f"Restarting indexing for {repo_info['full_name']} "
                     f"(previous status: {status})"

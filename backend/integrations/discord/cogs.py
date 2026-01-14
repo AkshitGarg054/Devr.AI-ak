@@ -218,7 +218,7 @@ class DevRelCommands(commands.Cog):
                 title="🔄 Indexing Repository",
                 description=(
                     f"Indexing `{repository}`...\n\n"
-                    "⏳ Note: For large repositories, indexing can take 30-35 minutes."
+                    "⏳ Note: For large repositories, indexing can take 30-35 minutes.\n" 
                     "Please wait until the process completes."
                 ),
                 color=discord.Color.blue()
