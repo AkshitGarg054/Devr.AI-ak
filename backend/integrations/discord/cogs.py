@@ -147,6 +147,10 @@ class DevRelCommands(commands.Cog):
                     if expires_at_dt < now_utc:
                         is_expired = True
 
+                else:
+                    #  token exists but no expiry → treat as expired
+                    is_expired = True
+
                 if not is_expired:
                     embed = discord.Embed(
                         title="⏳ Verification Pending",
